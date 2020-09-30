@@ -7,10 +7,30 @@ This document contains the following guides:
 ## How to set up new a password store
 
 #### Create GPG keys
-TODO
+
+```
+gpg --gen-key
+```
+
+Follow the prompts. Eventually, it will output something like:
+
+```
+public and secret key created and signed.
+
+pub   rsa2048 2020-09-30 [SC] [expires: 2022-09-30]
+      38294DB32940D3892AB90843Q40398J3V30J207T
+      uid                       Full Name <your.email@domain.com>
+      sub   rsa2048 2020-09-30 [E] [expires: 2022-09-30]
+```
+
+In the above output, your "gpg-id" is your email address on the `uid` line, and
+we will use this gpg-id in the next step to initialize your password store.
 
 #### Initialize pass
-TODO
+
+```
+pass init your.email@domain.com
+```
 
 You can now add existing passwords, randomly generate new passwords, and
 retrieve stored passwords that are saved as GPG-encrypted files in
