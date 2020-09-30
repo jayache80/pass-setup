@@ -35,11 +35,13 @@ pass init your.email@domain.com
 You can now add existing passwords, randomly generate new passwords, and
 retrieve stored passwords that are saved as GPG-encrypted files in
 `~/.password-store` by default. If you have no hopes of ever migrating this
-password store to another computer, you can stop now. However, setting up a git
-repository is nice because it will allow you to easily migrate the password
-store to other computers as well as keep a `git log` of the changes made to the
-store. The `pass` utility automatically makes `git commits` to the repository
-any time you change the password store in any way.
+password store to another computer, you can stop now; `pass` will be storing
+your encrypted files as `.gpg` files within `~/.password-store`. However,
+setting up a git repository is nice because it will keep a `git log` of the
+changes made to the password store; the `pass` utility automatically makes `git
+commits` to the repository any time you change the password store in any way.
+Further, using a git repository allows you to easily migrate the password store
+to other computers.
 
 #### Setup git repo
 > Note: Make sure you have `[user]` info in `~/.gitconfig`.
