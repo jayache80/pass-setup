@@ -142,12 +142,14 @@ Host central
     Hostname <centralhost>
     User <user>
     IdentityFile ~/path/to/central_id_rsa
+    Port 2345
 ```
 
 This assumes you've already set up public/private keys to log into the
 `central` server, that the public key (`central_id_rsa.pub`) has already been
 copied over to the `central` server, and that this machine has a copy of the
-private key (`central_id_rsa`) located at `~/path/to/central_id_rsa`.
+private key (`central_id_rsa`) located at `~/path/to/central_id_rsa`. It also
+explicitly specifies port 2345 instead of the default port 22.
 
 > Note: Make sure you have `[user]` info in `~/.gitconfig`.
 
@@ -155,7 +157,7 @@ If this were the first time we were creating a git repo for this password
 store, we would've ran `pass git init` but in this case we want to clone an
 existing git repo into `~/.passwore-store`:
 ```
-git clone ssh://central:<port>/path/to/repo.git ~/.passwore-store
+git clone ssh://central/path/to/repo.git ~/.passwore-store
 ```
 
 You should now be ready to rock and roll.
