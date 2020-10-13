@@ -57,7 +57,7 @@ a central server.
 
 ## How to migrate a local password store to a central server
 The `pass` utility has set up the password store git repository for you, which
-by default lives in `~/.passwore-store`. To migrate this to a central server,
+by default lives in `~/.password-store`. To migrate this to a central server,
 log in to the central server and create a bare repository with:
 ```
 git init --bare /path/to/repo.git
@@ -132,7 +132,7 @@ If we were creating a fresh password store, we would've run `pass init <uid>`
 with the `uid` we learned of earlier. However, a git repo exists somewhere that
 already has the `uid` baked into it. We've migrated over the GPG key, now we
 just need to clone the git repo. Running `pass init <uid>` usually creates a
-`~/.passwore-store` directory for us. Since we're not running that, we'll have
+`~/.password-store` directory for us. Since we're not running that, we'll have
 `git clone` implicitly create the directory for us.
 
 For `git` to be able to sync with a remote SSH repo on a different port, put
@@ -155,9 +155,9 @@ explicitly specifies port 2345 instead of the default port 22.
 
 If this were the first time we were creating a git repo for this password
 store, we would've ran `pass git init` but in this case we want to clone an
-existing git repo into `~/.passwore-store`:
+existing git repo into `~/.password-store`:
 ```
-git clone ssh://central/path/to/repo.git ~/.passwore-store
+git clone ssh://central/path/to/repo.git ~/.password-store
 ```
 
 You should now be ready to rock and roll.
